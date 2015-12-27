@@ -16,7 +16,7 @@ public abstract class AbstractCommand implements Command {
     }
 
     protected void addServerArgument(ArgumentListBuilder arguments) {
-        arguments.add(String.format("-server:%s", config.getUrl()));
+        arguments.add(String.format("-collection:%s", config.getUrl()));
     }
     
     protected void addLoginArgument(MaskedArgumentListBuilder arguments) {
