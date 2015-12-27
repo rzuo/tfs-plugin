@@ -15,13 +15,13 @@ public abstract class AbstractCommand implements Command {
         this.config = configurationProvider;
     }
 
-	//
-	// modified by rzuo @ 2015.12.27
-	//
-	// With -server argument in tf command, only DefaultCollection is valid
-	// if there are many collections other DefaultCollection, the -server argument can not access them.
-	// So by my working experience, I use -collection argument other than -server argument to solve this problem.
-	//
+    //
+    // modified by rzuo @ 2015.12.27
+    //
+    // With -server argument in tf command, only DefaultCollection is valid
+    // if there are many collections other DefaultCollection, the -server argument can not access them.
+    // So by my working experience, I use -collection argument other than -server argument to solve this problem.
+    //
     protected void addServerArgument(ArgumentListBuilder arguments) {
         arguments.add(String.format("-collection:%s", config.getUrl()));
     }
